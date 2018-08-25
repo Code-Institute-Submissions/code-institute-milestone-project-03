@@ -21,3 +21,7 @@ The Boostrap Theme - the Big Picture - was used as a template for the project. T
 
 Link: https://startbootstrap.com/template-overviews/the-big-picture/
 
+## Riddles
+
+The riddles were sourced from the website http://www.riddles.com
+

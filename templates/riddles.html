@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block core %}
+<section class="row text-center">
+    <div id="home-header" class="col">
+        <h1 class="main-header display-3">Think!</h1>
+    </div>
+</section>
+
+<section class="row text-center">
+    <div class="col">
+        <div class="dark-div">
+            <h1>Riddle {{ context.riddle_index + 1 }}:</h1>
+            <p class="lead">{{ context.riddle }}</p>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        {% if category == 'error' %}
+                            <div class="messages alert alert-danger" role="alert">
+                              <strong>Whoops!</strong> {{ message }}
+                            </div>
+                        {% else %}
+                            <div class="messages alert alert-success" role="alert">
+                              <strong>Woah!</strong> {{ message }}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <form method="POST">
+                <input type="text" class="form-control" id="submitted_answer" name="submitted_answer" placeholder="Enter your answer!" pattern="^[a-zA-Z0-9 ]+$" autofocus required>
+                <input type="hidden" name="riddle_index" id="riddle_index" value="{{ context.riddle_index }}">
+                <input type="hidden" name="current_score" id="current_score" value="{{ context.current_score }}">
+                <input type="hidden" name="attempt" id="attempt" value="{{ context.attempt }}">
+                <button type="submit" class="main-button btn btn-success btn-lg btn-block">Next Question</button>
+            </form>
+            <p class="lead">Current Score: <strong>{{ context.current_score }}</strong></p>
+            <p class="lead">Current Attempt: <strong>{{ context.attempt }}</strong></p>
+        </div>
+    </div>
+</section>
+{% endblock %}
