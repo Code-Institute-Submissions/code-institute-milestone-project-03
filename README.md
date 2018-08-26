@@ -17,11 +17,23 @@ At the end of the game, the players score will be recorded on the leaderboard us
 
 ## Theme
 
-The Boostrap Theme - the Big Picture - was used as a template for the project. This was obtained from the free library at Startbootstrap.com
+The Boostrap Theme - Coming Soon theme - was used as a template for the project. This was obtained from the free library at Startbootstrap.com
 
-Link: https://startbootstrap.com/template-overviews/the-big-picture/
+Link: https://startbootstrap.com/template-overviews/coming-soon/
+
+## Fonts
+
+Google Fonts - Amatic SC - https://fonts.google.com/specimen/Amatic+SC?selection.family=Amatic+SC:400,700
+Google Fonts - Source Sans Pro - https://fonts.google.com/specimen/Source+Sans+Pro
+
+Font Awesome - v5.2.0
 
 ## Riddles
 
 The riddles were sourced from the website http://www.riddles.com
 
+## Images & Videos
+
+Riddler Image - Pinterest - Link: https://www.pinterest.ie/pin/501025527274703156/
+
+Background Video - Coverr.co Free Stock Videos - Link: https://coverr.co/videos/White%20Board

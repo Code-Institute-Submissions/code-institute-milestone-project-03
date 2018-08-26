@@ -29,17 +29,17 @@ def init_game(username):
 
 # Function to add a player to the leaderboard after the game has been completed.
 def add_to_leaderboard(username, final_score):
-    leaderboard = get_leaders()
-    with open('data/leaderboard.txt', 'a') as leaderboard:
-        if not (username, final_score) in leaderboard:
+    leaders = get_leaders()
+    with open('data/leaders.txt', 'a') as leaderboard:
+        if not (username, final_score) in leaders:
             leaderboard.write('\n{}:{}'.format(str(username), str(final_score)))
 
 # Function to get current top 10 leaders
 def get_leaders():
-    with open('data/leaderboard.txt') as leaderboard:
-        leaderboard = [line for line in leaderboard.readlines()[1:]]
+    with open('data/leaders.txt') as leaders:
+        leaders = [line for line in leaders.readlines()[1:]]
         sorted_leaders = []
-        for leader in leaderboard:
+        for leader in leaders:
             tupe = (leader.split(':')[0].strip(), int(leader.split(':')[1].strip()))
             sorted_leaders.append(tupe)
             
@@ -121,20 +121,20 @@ def riddleme(username):
             
             # Return final score and add the player to the leaderboard
             add_to_leaderboard(username, score)
-            return render_template('leaderboard.html', final_score=score, leaderboard=get_leaders())
+            return render_template('leaders.html', final_score=score, leaders=get_leaders())
             
     # Redirect to the homepage with an error if using GET
     flash('You can\'t access that page directly. Enter your username below:')
     return redirect('/')
 
 # Dislay only for the leaderboard
-@app.route('/leaderboard')
-def leaderboard():
-    leaderboard = get_leaders()
-    return render_template("leaderboard.html", leaderboard=leaderboard)
+@app.route('/leaders')
+def leaders():
+    leaders = get_leaders()
+    return render_template("leaders.html", leaders=leaders)
 
 # Dead route to redirect curious tinkerers
-@app.route('/riddleme')
+@app.route('/riddles')
 def riddle_redirect():
     # Redirect to the homepage with an error
     flash('You can\'t access that page directly. Enter your username below:')
