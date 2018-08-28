@@ -12,14 +12,14 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" type="text/css" />
-
+   
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/coming-soon.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/resume.min.css') }}" type="text/css" />
   </head>
 
 <body>
@@ -30,37 +30,29 @@
    
    <div class="overlay"></div>
     <section id="core" class="container-fluid">
+		<div class="container">
 		
 			{% block core %}
 			{% endblock %}
-
+     <!-- Reset Button -->
+        
 	</section>
-	
-  <div class="social-icons">
-      <ul class="list-unstyled text-center mb-0">
-        <li class="list-unstyled-item">
-          <a href="#">
-            <i class="fab fa-github"></i>
-          </a>
-        </li>
-        <li class="list-unstyled-item">
-          <a href="#">
-            <i class="fab fa-linkedin"></i>
-          </a>
-        </li>
-      </ul>
-  </div>
    
-
+   
+    {% block footer %}
+	{% include "footer.html" %}
+	{% endblock %}
 
     <!-- Bootstrap core JavaScript -->
     <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
-     <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
- 
+    <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="{{ url_for('static', filename='vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="{{ url_for('static', filename='js/coming-soon.min.js') }}"></script>
-
+    <script src="{{ url_for('static', filename='js/resume.min.js') }}"></script>
+   
  </body>
 
 </html>

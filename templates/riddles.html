@@ -1,22 +1,14 @@
 {% extends 'base.html' %}
 
 {% block core %}
-<div class="overlay">
-     <div class="col-sm-6 offset-sm-4">
 
-<section class="row text-center">
-    <div id="home-header" class="col">
-        <h1 class="main-header display-3">Think!</h1>
-    </div>
-</section>
+<div class="container-fluid p-0">
 
-<br>
-<br>
-
-<section class="row text-center">
-    <div class="col">
-        <div class="dark-div">
-            <h1>Riddle {{ context.riddle_index + 1 }}:</h1>
+ <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+        <div class="my-auto">
+          <h1 class="mb-0">Lets Go!</h1>
+          <br>
+            <h2 class="mb-0">Riddle {{ context.riddle_index + 1 }}:</h2>
             <p class="lead">{{ context.riddle }}</p>
             {% with messages = get_flashed_messages(with_categories=true) %}
                 {% if messages %}
@@ -40,8 +32,13 @@
                 <input type="hidden" name="attempt" id="attempt" value="{{ context.attempt }}">
                 <button type="submit" class="main-button btn btn-success btn-lg btn-block">Next Question</button>
             </form>
+            <br>
             <p class="lead">Current Score: <strong>{{ context.current_score }}</strong></p>
             <p class="lead">Current Attempt: <strong>{{ context.attempt }}</strong></p>
+            <br>
+              <form action="{{ url_for('index') }}">
+                <button type="submit" value="Go to homepage" class="btn btn-sm btn-info nav-btn"><strong>Reset Game</strong></button>
+              </form>
         </div>
     </div>
 </section>

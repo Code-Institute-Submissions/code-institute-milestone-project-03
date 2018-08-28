@@ -95,7 +95,8 @@ def riddleme(username):
                 else:
                     if attempt >= 2: 
                         riddle_index += 1
-                        attempt = 1
+                        score += 1
+                        
                         next_riddle = get_riddle(riddle_index)
                         flash('"{}" was your last attempt. The answer was "{}". How about a new riddle?'.format(submitted_answer, actual_answer), 'error')
                     else:

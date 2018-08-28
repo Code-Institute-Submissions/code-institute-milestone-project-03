@@ -1,13 +1,37 @@
-<div class="masthead">
-      <div class="masthead-bg"></div>
-      <div class="container h-100">
-        <div class="row h-100">
-          <div class="col-12 my-auto">
-            <div class="masthead-content text-white py-5 py-md-0">
-              <h1 class="mb-3 text-center">Riddle Me This!</h1>
-              <img src="{{ url_for('static', filename='img/riddler.png') }}" alt="Riddler" height="853" width="400" type="image">
-            </div>
-          </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">
+        <span class="d-block d-lg-none"><h2>Riddle Me This</h2></span>
+        
+        <span class="d-none d-lg-block">
+          
+          <img class="img-fluid" src="{{ url_for('static', filename='img/riddler.png') }}" alt="The Riddler" type="image">
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="/leaders">Leaderboard</a>
+          </li>
+        
+        <br>
+        <br>
+        <!-- Social Icons -->
+      
+       <div class="social-icons">
+          <a href="https://github.com/pierceoneill" target="_blank" alt="Click to go to my Github">
+            <i class="fab fa-github"></i>
+          </a>
+           <a href="https://www.linkedin.com/in/pierce-oneill/" target="_blank" alt="Click to go to my Linkedin">
+            <i class="fab fa-linkedin"></i>
+          </a>
         </div>
+        </ul>
       </div>
-    </div>
+      
+    </nav>

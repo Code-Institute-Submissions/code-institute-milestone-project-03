@@ -2,37 +2,28 @@
 
 {% block core %}
 
-<div class="overlay">
-     <div class="col-sm-6 offset-sm-4">
-         
-<section class="row text-center">
-    <div id="home-header" class="col">
-        <h1 class="main-header display-3">Ready?</h1>
-    </div>
-</section>
-
-
-<div class="row text-center">
-    <div class="col">
-        <div class="dark-div">
-            <p class="lead">Hi {{ username }}! You're about to play Riddle Me This! You'll see 10 riddles, and you'll have two chances to answer each one.</p>
-            <p class="lead">There's no time limit, but you'll only get points for correct answers. So take your time and think outside the box.</p>
-            <p class="lead">If you're good enough, you'll make it to the leaderboard!</p>
-            <h4>When you're ready to start, click go!</h4>
+<div class="container-fluid p-0">
+ 
+    <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+        <div class="my-auto">
+          <h1 class="mb-0">Riddle Me This!?!?</h1>
+          <div class="subheading mb-5">Do you think you can outsmart the riddler?</div>
+    
+            <p class="lead mb-5">Hello {{ username }}! Are you ready to take the on the Riddler's challenge? You will be presented with 10 riddles with 2 chances to answer correctly.</p>
+            <p class="lead mb-5">You will get 1 point for each correct answer. All is not as it seems, so read the riddles carefully</p>
+            <p class="lead mb-5">If you're good enough, you'll make it to the leaderboard!</p>
+            <h3>When you're ready to start, click on the button below!</h3>
             <form method="POST" action="/riddles/{{ username }}">
                 <input type="hidden" value="true" name="first-question">
-                <button class="main-button btn btn-success btn-lg btn-block">Go!</button>
+                <button type="submit" class="main-button btn btn-success btn-lg btn-block"><strong>Click Here To Start</strong></button>
+            </form>
+            <br>
+              <form action="{{ url_for('index') }}">
+                <button type="submit" value="Go to homepage" class="btn btn-sm btn-info nav-btn"><strong>Reset Game</strong></button>
             </form>
         </div>
     </div>
-</div>
-</div>
-</div>
-
-    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-      <source src="{{ url_for('static', filename='mp4/White-Board.mp4') }}" type="video/mp4">
-    </video>
-</section>
-
-
+    
+    </section>
+    
 {% endblock %}
