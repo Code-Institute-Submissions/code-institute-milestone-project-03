@@ -66,13 +66,6 @@ In addition, you may also use this section to discuss plans for additional featu
 - **Heroku** https://riddle-me-this-pon.herokuapp.com/
     *   Final deployment of the app
 
-Manual Testing
-Manual tests were carried out primarily for two purposes:
-
-Testing the flow off the game: The game loop (the render_game() function) is a combination of various functions. All these functions may work correctly, thus passing all the automated tests, but not work together as planned. Therefore, manual testing was required to ensure the game flowed as planned. An example of this was removing dead players from the JSON data before checking if all players have been eliminated.
-Experimenting with the project: There were times throughout development where some experimentation was required to understand what functions to design. In these instances, the first step was to experiment by designing a few functions. Then, once it was known what functions should be designed, these functions could be tested to ensure that they worked as planned.
-
-
 ## Testing
 
 ### Manual Testing
@@ -96,6 +89,13 @@ Opera
 Microsoft Edge
 Mozilla Firefox
 Safari
+
+Manual Testing
+Manual tests were carried out primarily for two purposes:
+
+Testing the flow off the game: The game loop (the render_game() function) is a combination of various functions. All these functions may work correctly, thus passing all the automated tests, but not work together as planned. Therefore, manual testing was required to ensure the game flowed as planned. An example of this was removing dead players from the JSON data before checking if all players have been eliminated.
+Experimenting with the project: There were times throughout development where some experimentation was required to understand what functions to design. In these instances, the first step was to experiment by designing a few functions. Then, once it was known what functions should be designed, these functions could be tested to ensure that they worked as planned.
+
 
 ## Deployment
 
