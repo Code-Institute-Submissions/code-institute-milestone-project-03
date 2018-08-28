@@ -106,10 +106,13 @@ The GitHub Repository is hosted at https://github.com/pierceoneill/code-institut
 
 ## Credits
 
-### Content
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
+## Extra Resources
 
-### Media
+Stackoverflow.com
+
+Slack
+
+GitHub
 
 ## Images & Videos
 
