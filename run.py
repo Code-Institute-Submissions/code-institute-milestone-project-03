@@ -57,7 +57,7 @@ def howtoplay():
         form = request.form
         user = form['username']
         return render_template("howtoplay.html", username=user)
-    flash('You can\'t access that page directly. Enter your username below:')
+    flash('You can\'t access that page without playing the game. Enter a username below:')
     return redirect('/')
 
 # Route to loop through to show riddles
@@ -66,8 +66,6 @@ def riddleme(username):
     if request.method == 'POST':
         form = request.form
         
-        ''' If we're on the first question, initialize the game with a default attempt, score, riddle index, etc.
-        Otherwise, get the game info from the form that was submitted '''
         
         if form.get('first-question') == 'true':
             context = init_game(username)
@@ -79,30 +77,30 @@ def riddleme(username):
             score = int(request.form.get('current_score'))
             riddle = get_riddle(riddle_index)
             
-            # Check whether the answer is correct
+            # Check if the answer is correct
             submitted_answer = request.form.get('submitted_answer').strip().lower()
             actual_answer = riddle['riddle_answer'].strip().lower()
             correct = submitted_answer == actual_answer
             
-            # Scoring/game logic
+            # Scoring
             while riddle_index < 10:
                 if correct:
                     riddle_index += 1
                     score += 1
                     attempt = 1
                     next_riddle = get_riddle(riddle_index)
-                    flash('Nice work! You nailed it!', 'success')
+                    flash('Well! Well! You guessed correctly!', 'success')
                 else:
                     if attempt >= 2: 
                         riddle_index += 1
                         score += 1
                         
                         next_riddle = get_riddle(riddle_index)
-                        flash('"{}" was your last attempt. The answer was "{}". How about a new riddle?'.format(submitted_answer, actual_answer), 'error')
+                        flash('"{}" was your last attempt. The answer was "{}". Fancy another riddle?'.format(submitted_answer, actual_answer), 'error')
                     else:
                         attempt += 1
                         next_riddle = get_riddle(riddle_index)
-                        flash('"{}" wasn\'t right. You\'ve got one more try...'.format(submitted_answer), 'error')
+                        flash('"{}" was wrong. You\'ve got one more try...'.format(submitted_answer), 'error')
                 
                 # Now just populate a context dictionary to use in the template, and return the template.
                 # next_riddle will be none if we're on the final question. If so we clear flashed messages
@@ -125,7 +123,7 @@ def riddleme(username):
             return render_template('leaders.html', final_score=score, leaders=get_leaders())
             
     # Redirect to the homepage with an error if using GET
-    flash('You can\'t access that page directly. Enter your username below:')
+    flash('You can\'t access that page without playing the game. Enter a username below:')
     return redirect('/')
 
 # Dislay only for the leaderboard
@@ -138,7 +136,7 @@ def leaders():
 @app.route('/riddles')
 def riddle_redirect():
     # Redirect to the homepage with an error
-    flash('You can\'t access that page directly. Enter your username below:')
+    flash('You can\'t access that page without playing the game. Enter a username below:')
     return redirect('/')
     
 app.run(host=os.getenv('IP'), port=int(os.getenv('PORT')), debug=True)

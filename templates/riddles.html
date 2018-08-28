@@ -15,11 +15,11 @@
                     {% for category, message in messages %}
                         {% if category == 'error' %}
                             <div class="messages alert alert-danger" role="alert">
-                              <strong>Whoops!</strong> {{ message }}
+                              <strong>Ha! Ha!</strong> {{ message }}
                             </div>
                         {% else %}
                             <div class="messages alert alert-success" role="alert">
-                              <strong>Woah!</strong> {{ message }}
+                              <strong>Hmmm! Impressive.</strong> {{ message }}
                             </div>
                         {% endif %}
                     {% endfor %}
@@ -41,5 +41,4 @@
               </form>
         </div>
     </div>
-</section>
 {% endblock %}
