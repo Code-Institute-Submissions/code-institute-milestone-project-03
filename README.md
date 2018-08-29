@@ -11,36 +11,43 @@ The player must choose a username at the beginning of the game which will be uni
 
 The player is presented with a series of 10 text based riddles. Players enter their answer into a text box form. 
 
-If the player guesses correctly, they are directed to the next riddle and awarded 10 points. 
+If the player guesses correctly, they are directed to the next riddle and awarded 1 point. 
 If a player guesses incorrectly, their incorrect guess is storedand printed below the riddle.
 
 At the end of the game, the players score will be recorded on the leaderboard using their username as a reference.
  
 ## UX
  
-Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
+I spoke with three different potential users regardign what they would look for in a riddle app/ game.
 
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
-- As a user type, I want to perform an action, so that I can achieve a goal.
+User 1 wanted to play the game on the move so a responsive site was required for him.
 
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
+User 2 wanted a clean, simple user interface that would let her concetrate on the riddle rather than be distracted by pictures or colors on the screen.
+
+User 3 wanted puzzles that would make him think outside the box but would also be fun.
+
+All three users were happy with the final product when presented with it for further testing.
+
+The clean simple interface was important for me to produce to make it easier on the eye and not over cluttered which would distract from the presentation of the riddles.
+
+The app is fully responsive which is important especially with so many people accessing games and websites on various mobile devices.
+
+I have included a number of wireframes which I used in the development of the various screens in the production of this application. They are included in the repository.
 
 ## Features
 
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
+The app features a game which requires a unique username so that results can be recorded on a leaderboard. The Top 10 results are displayed o nthe leaderboard. The app consists of a welcome page, an instruction page,
+10 riddles and then a leaderboard page.
+
+Users can restart the game at anytime by clicking the reset button at the bottom of the page. This returns the user to the starting page, so that the user can recommence.
  
-### Existing Features
-- Feature 1 - allows users X to achieve Y, by having them fill out Z
-- ...
-
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
-
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
 
 ### Features Left to Implement
-- Another feature idea
+I would of liked to explore some more automated testing on this project.
+I would also like to add a contact section so that users can submit new riddles.
+I would also like to add more riddles so that the user will be presented with new riddles each time.
 
-## Technologies Used
+
 
 ### Some of the tech used includes:
 -	**HTML**  and **CSS**
